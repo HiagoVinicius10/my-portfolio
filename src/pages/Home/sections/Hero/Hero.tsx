@@ -6,6 +6,7 @@ import StyledButton from "../../../../components/StyledButton/StyledButton";
 import theme from "../../../../Theme";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground";
 
+
 const Hero = () => {
 
     const StyledHero = styled("div")(({ theme }) => ({
@@ -13,11 +14,18 @@ const Hero = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.up("xs")]: { // <= Mobile
+            PaddingTop: "100px",
+        },
+
+        [theme.breakpoints.up("md")]: { // >= Mobile
+            PaddingTop: "0",
+        }
     }))
 
     const StyledImg = styled("img")(() => ({
-        width: "80%",
-        borderRadius: "80%",
+        width: "75%",
+        borderRadius: "50%",
         border: `1px solid ${theme.palette.primary.contrastText}`
         
     }))
